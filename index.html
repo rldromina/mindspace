@@ -3,14 +3,14 @@
 <html>
   <head>
     <title>Companeuro</title>
+    <link rel="icon" type="image/png" href="static/favicon.ico">
+    <link rel="stylesheet" href="static/jspsych/css/jspsych.css"></link>
     <script src="static/jspsych/jspsych.js"></script>
     <script src="static/jspsych/plugins/jspsych-video.js"></script>
     <script src="static/jspsych/plugins/jspsych-survey-text.js?v=6"></script>
     <script src="static/jspsych/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="static/jspsych/plugins/jspsych-survey-multi-choice.js"></script>
     <script src="static/jquery-3.3.1.js"></script>
-    <link rel="icon" type="image/png" href="static/favicon.ico">
-    <link rel="stylesheet" href="static/jspsych/css/jspsych.css"></link>
   </head>
   <body></body>
   <script>
@@ -37,6 +37,12 @@
       controls: true,
     };
 
+  var choice = {
+      type: 'survey-multi-choice',
+      questions: [{prompt: "¿Estudiás o estudiaste alguna ciencias exacta?", options: ["Sí", "No"], required:true}],
+      button_label: 'Continuar',
+  };
+
   var descripcion = {
         type: 'survey-text',
         questions: [
@@ -49,13 +55,10 @@
       type: 'survey-text',
       questions: [
       	{prompt: '¿Cuántos años tenés?', value: '', columns: 10},
+        {prompt: '¿Cuántas horas de sueño tuviste la noche anterior?', value: '', columns: 20},
         {prompt: '¿En qué barrio vivís?', value: '', columns: 10},
-        {prompt: '¿Cuál es tu género musical favorito?', value: '', columns: 10},
-        {prompt: '¿En qué barrio vivís?', value: '', columns: 10},
-        {prompt: '¿Cuál es tu color favorito?', value: '', columns: 10},
-        {prompt: 'Priorizá las siguientes capacidades: 1.olfato , 2.visión, 3.audición, 4.tacto, 5.gusto, 6.calor, 7.estado corporal, 8.imaginación, 9.lenguaje, 10.emoción', value: '', columns: 10},
-        {prompt: 'Ingresá tu altura y peso aproximadamente ("ej. 175 cm, 75 kg") ', value: '', columns: 10},
-      	{prompt: '¿Cuántas horas de sueño tuviste la noche anterior?', value: '', columns: 10},
+        {prompt: 'Ingresá tu altura y peso aproximadamente ("ej. 175 cm, 75 kg") ', value: '', columns: 20},
+        {prompt: '</p>Priorizá las siguientes capacidades escribiendo los números en el orden que consideres:</p><p>1.Olfato, 2.Visión, 3.Audición, 4.Tacto, 5.Gusto, 6.Sensación de Calor, 7.Posición corporal, 8.Imaginación, 9.Lenguaje, 10.Emoción</p>', value: '', columns: 10},
       ],
       button_label: 'Continuar',
   }; 
@@ -68,32 +71,37 @@
   	  ],
         button_label: 'Continuar',
   };
-  
-  var choice = {
-      type: 'survey-multi-choice',
-      questions: [{prompt: "¿Estudiás o estudiaste alguna ciencias exacta?", options: ["Sí", "No"], required:true}],
-      button_label: 'Continuar',
-};
 
-  var hobbies = {
+  var arte = {
   		type: 'survey-text',
   	    questions: [
-  	    {prompt: '¿Realizás o realizaste te alguna actividad artística? Ordenar por prioridad', value: '', rows:2, columns: 50},
-        {prompt: '¿Hace cuántos años realizas estas actividades? Indicar un valor correspondiente a cada actividad' , value:'', colums: 20},
-        {prompt: '¿Cuántas horas a la semana aproximadamente le dedicabas los primeros meses? Indicar un valor correspondiente a cada actividad', value: '', columns: 20},
-        {prompt: '¿Cuántas horas a la semana aproximadamente le dedicas ahora? Indicar un valor correspondiente a cada actividad', value: '', columns: 20},
+  	    {prompt: '¿Realizás o realizaste te alguna actividad artística? Enumerá todas las realizadas, ordenadas de mayor a menor importancia subjetiva para vos', value: '', rows:3, columns:50},
+        {prompt: '¿Durante cuántos meses practicaste al menos una vez por semana esta actividad? Indicar un valor correspondiente por actividad' , value:'', colums: 30},
+        {prompt: 'Durante los meses de mayor actividad, ¿cuántas horas semanales le dedicas/te en promedio? Indicar un valor correspondiente a cada actividad', value: '', columns: 30},
+        {prompt: 'Durante los meses de menor actividad, ¿cuántas horas semanales le dedicas/te en promedio? Indicar un valor correspondiente a cada actividad', value: '', columns: 30},
+      ],
+      button_label: 'Continuar',
+  };
+
+var deporte = {
+  		type: 'survey-text',
+  	    questions: [
+  	    {prompt: '¿Realizás o realizaste algún deporte o actividad física? Enumerá todas las realizadas, ordenadas de mayor a menor importancia subjetiva para vos', value: '', rows:3, columns:50},
+        {prompt: '¿Durante cuántos meses practicaste al menos una vez por semana esta actividad? Indicar un valor correspondiente por actividad' , value:'', colums: 30},
+        {prompt: 'Durante los meses de mayor actividad, ¿cuántas horas semanales le dedicas/te en promedio? Indicar un valor correspondiente a cada actividad', value: '', columns: 30},
+        {prompt: 'Durante los meses de menor actividad, ¿cuántas horas semanales le dedicas/te en promedio? Indicar un valor correspondiente a cada actividad', value: '', columns: 30},
       ],
       button_label: 'Continuar',
   };
 
 var despedida = {
     type: "html-keyboard-response",
-    stimulus: "<p>Muchas gracias!</p>",
+    stimulus: "<p>Muchas gracias!</p><img src='static/thanks.jpg'</img>",
 } 
 
 //timeline es la serie de pasos del experimento
   jsPsych.init({
-    timeline: [bienvenida, instrucciones, video, descripcion, choice, personales, academia, hobbies, despedida],
+    timeline: [bienvenida, instrucciones, video, descripcion, personales, choice, academia, arte, deporte, despedida],
 
     on_finish: function() { $.ajax({
                         type: "POST",
