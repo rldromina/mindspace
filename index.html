@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head>
+    <title>Companeuro</title>
+    <script src="static/jspsych/jspsych.js"></script>
+    <script src="static/jspsych/plugins/jspsych-video.js"></script>
+    <script src="static/jspsych/plugins/jspsych-survey-text.js?v=6"></script>
+    <script src="static/jspsych/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="static/jspsych/plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="static/jquery-3.3.1.js"></script>
+    <link rel="icon" type="image/png" href="static/favicon.ico">
+    <link rel="stylesheet" href="static/jspsych/css/jspsych.css"></link>
+  </head>
+  <body></body>
+  <script>
+  
+  var bienvenida = {
+    type: "html-keyboard-response",
+    stimulus: "<font size=5.5><p>En el siguiente experimento exploraremos algunas propiedades de la percepción.</p><p>Presione cualquier tecla para continuar o espere unos segundos</p></font>",
+    trial_duration: 10000,
+    };
+
+  var instrucciones = {
+      type: "html-keyboard-response",
+      stimulus: "<font size=5.5><p>Mostraremos algunos videos cortos.</p><p>Mirelos atentamente, luego deberás describirlos con el mayor detalle que puedas.</p>" +
+          "<p>Presione cualquier tecla para comenzar o espere unos segundos.</p></font>",
+        trial_duration: 10000,
+    };
+
+  var video = {
+      type: 'video',
+      width: 830,
+      sources: ['./static/media/chinitos.mp4'],
+      stop:2,
+      autoplay: true, 
+      controls: true,
+    };
+
+  var descripcion = {
+        type: 'survey-text',
+        questions: [
+        {prompt: 'Describa el video con el mayor detalle que puedas.', value:'', rows: 20, colums: 400}
+        ],
+        button_label: 'Enviar',
+  };
+
+  var personales = {
+      type: 'survey-text',
+      questions: [
+      	{prompt: '¿Cuántos años tenés?', value: '', columns: 10},
+        {prompt: '¿En qué barrio vivís?', value: '', columns: 10},
+        {prompt: '¿Cuál es tu género musical favorito?', value: '', columns: 10},
+        {prompt: '¿En qué barrio vivís?', value: '', columns: 10},
+        {prompt: '¿Cuál es tu color favorito?', value: '', columns: 10},
+        {prompt: 'Priorizá las siguientes capacidades: 1.olfato , 2.visión, 3.audición, 4.tacto, 5.gusto, 6.calor, 7.estado corporal, 8.imaginación, 9.lenguaje, 10.emoción', value: '', columns: 10},
+        {prompt: 'Ingresá tu altura y peso aproximadamente ("ej. 175 cm, 75 kg") ', value: '', columns: 10},
+      	{prompt: '¿Cuántas horas de sueño tuviste la noche anterior?', value: '', columns: 10},
+      ],
+      button_label: 'Continuar',
+  }; 
+
+  var academia = {
+  	   type: 'survey-text',
+  	   questions:[
+  	   {prompt: '¿Qué estudiás o estudiaste?', value: '', columns: 50},
+       {prompt: '¿Cuál es tu nivel de formación académica? Ej. "Secundario Completo", "Posgrado Incompleto", ... ', value: '', columns: 10},
+  	  ],
+        button_label: 'Continuar',
+  };
+  
+  var choice = {
+      type: 'survey-multi-choice',
+      questions: [{prompt: "¿Estudiás o estudiaste alguna ciencias exacta?", options: ["Sí", "No"], required:true}],
+      button_label: 'Continuar',
+};
+
+  var hobbies = {
+  		type: 'survey-text',
+  	    questions: [
+  	    {prompt: '¿Realizás o realizaste te alguna actividad artística? Ordenar por prioridad', value: '', rows:2, columns: 50},
+        {prompt: '¿Hace cuántos años realizas estas actividades? Indicar un valor correspondiente a cada actividad' , value:'', colums: 20},
+        {prompt: '¿Cuántas horas a la semana aproximadamente le dedicabas los primeros meses? Indicar un valor correspondiente a cada actividad', value: '', columns: 20},
+        {prompt: '¿Cuántas horas a la semana aproximadamente le dedicas ahora? Indicar un valor correspondiente a cada actividad', value: '', columns: 20},
+      ],
+      button_label: 'Continuar',
+  };
+
+var despedida = {
+    type: "html-keyboard-response",
+    stimulus: "<p>Muchas gracias!</p>",
+} 
+
+//timeline es la serie de pasos del experimento
+  jsPsych.init({
+    timeline: [bienvenida, instrucciones, video, descripcion, choice, personales, academia, hobbies, despedida],
+
+    on_finish: function() { $.ajax({
+                        type: "POST",
+                        data: {'data' : jsPsych.data.get().csv()},
+                        url: "http://quipusoft.com/mati.asp",
+                        })
+                    }
+    
+  });
+  //
+</script>
+</html>
+
