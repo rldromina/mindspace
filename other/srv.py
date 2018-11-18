@@ -7,7 +7,7 @@ exp_path = os.path.dirname(__file__)
 app = Flask(__name__, template_folder=exp_path)
 run_with_ngrok(app)
 
-@app.route('/experimento')
+@app.route('/')
 def experimentar():
     return render_template('experimento.html')
 
