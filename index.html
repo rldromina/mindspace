@@ -46,7 +46,7 @@
   var descripcion = {
         type: 'survey-text',
         questions: [
-        {prompt: 'Describa el video con el mayor detalle que puedas.', value:'', rows: 20, colums: 400}
+        {prompt: 'Describí el video con el mayor detalle que puedas.', value:'', rows: 20, colums: 400}
         ],
         button_label: 'Enviar',
   };
@@ -101,7 +101,8 @@ var despedida = {
 
 //timeline es la serie de pasos del experimento
   jsPsych.init({
-    timeline: [bienvenida, instrucciones, video, descripcion, personales, choice, academia, arte, deporte, despedida],
+    timeline: [bienvenida, instrucciones, video, descripcion, 
+                personales, choice, academia, arte, deporte, despedida],
 
     on_finish: function() { $.ajax({
                         type: "POST",
