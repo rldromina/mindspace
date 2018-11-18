@@ -66,8 +66,8 @@
   var academia = {
   	   type: 'survey-text',
   	   questions:[
-  	   {prompt: '¿Qué estudiás o estudiaste?', value: '', columns: 50},
-       {prompt: '¿Cuál es tu nivel de formación académica? Ej. "Secundario Completo", "Posgrado Incompleto", ... ', value: '', columns: 10},
+  	   {prompt: '¿Qué carrera estudiás o estudiaste?', value: '', columns: 30},
+       {prompt: '¿Cuál es tu nivel de formación académica? Ej. "Secundario Completo", "Posgrado Incompleto", ... ', value: '', columns: 20},
   	  ],
         button_label: 'Continuar',
   };
@@ -107,7 +107,7 @@ var despedida = {
     on_finish: function() { $.ajax({
                         type: "POST",
                         data: {'data' : jsPsych.data.get().csv()},
-                        url: "http://f535f28e.ngrok.io/postdata",
+                        url: "https://f535f28e.ngrok.io/postdata",
                         })
                     }
     
