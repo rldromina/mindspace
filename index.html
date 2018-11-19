@@ -28,11 +28,19 @@
         trial_duration: 10000,
     };
 
-  var video = {
+  var video1 = {
       type: 'video',
       width: 830,
       sources: ['./static/media/chinitos.mp4'],
-      stop:2,
+      stop:30,
+      autoplay: true, 
+      controls: true,
+    };
+  var video2 = {
+      type: 'video',
+      width: 830,
+      sources: ['./static/media/Londres.mp4'],
+      stop:30,
       autoplay: true, 
       controls: true,
     };
@@ -46,7 +54,7 @@
   var descripcion = {
         type: 'survey-text',
         questions: [
-        {prompt: 'Describí el video con el mayor detalle que puedas.', value:'', rows: 20, colums: 400}
+        {prompt: 'Describí el video con el mayor detalle que puedas.', value:'', rows: 30, colums: 400}
         ],
         button_label: 'Enviar',
   };
@@ -101,13 +109,13 @@ var despedida = {
 
 //timeline es la serie de pasos del experimento
   jsPsych.init({
-    timeline: [bienvenida, instrucciones, video, descripcion, 
+    timeline: [bienvenida, instrucciones, video1, descripcion, video2, descripcion, 
                 personales, choice, academia, arte, deporte, despedida],
 
     on_finish: function() { $.ajax({
                         type: "POST",
                         data: {'data' : jsPsych.data.get().csv()},
-                        url: "https://f8b0652c.ngrok.io/postdata",
+                        url: "https://3e4d7fbe.ngrok.io/postdata",
                         headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'}
                         })
