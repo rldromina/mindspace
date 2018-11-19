@@ -18,7 +18,7 @@ def experimentar():
 def get_data():
     data = request.form['data']
     
-    with open(exp_path + '/data/' + str(strftime('%H-%M %j')) + ".txt", 'w') as out:
+    with open(exp_path + '/data/' + str(strftime('"%Y-%m-%d %H:%M:%s"')) + ".txt", 'w') as out:
         out.write(data)
 
     return ''

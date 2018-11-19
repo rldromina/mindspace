@@ -44,20 +44,33 @@
       autoplay: true, 
       controls: true,
     };
-
-  var choice = {
-      type: 'survey-multi-choice',
-      questions: [{prompt: "¿Estudiás o estudiaste alguna ciencias exacta?", options: ["Sí", "No"], required:true}],
-      button_label: 'Continuar',
-  };
-
+  
   var descripcion = {
         type: 'survey-text',
         questions: [
         {prompt: 'Describí el video con el mayor detalle que puedas.', value:'', rows: 30, colums: 400}
         ],
         button_label: 'Enviar',
+    };
+
+
+  var choice = {
+      type: 'survey-multi-choice',
+      questions: [{prompt: "¿Estudiás o estudiaste alguna ciencias exacta?", options: ["Sí", "No"], required:true}],
+      questions: [{prompt: "¿Te gusta más el día o la noche?", options: ["Día", "Noche"], required:true}],
+      button_label: 'Continuar',
   };
+  
+  var consumo = {
+      type: 'survey-multi-choice',
+      prompt: '¿Dirías que las siguientes afirmaciones generalmente se cumplen para vos? En el último mes, consumí en una misma ocasión:',
+      questions: [{prompt: '1 L de cerveza, o 3 copas de vino, o 3 tragos de cocktail, o algo de vodka o tequila', options: ["S", "N"], required:true}, 
+      {prompt: '1 cigarrillo de marihuana', options: ["S", "N"], required:true},
+      {prompt: 'cualquier cantidad de droga alucinógena', options: ["S", "N"], required:true},
+      {prompt: '1 cigarrillo de tabaco', options: ["S", "N"], required:true}],
+      button_label: 'Continuar',
+  };
+
 
   var personales = {
       type: 'survey-text',
@@ -65,8 +78,8 @@
       	{prompt: '¿Cuántos años tenés?', value: '', columns: 10},
         {prompt: '¿Cuántas horas de sueño tuviste la noche anterior?', value: '', columns: 20},
         {prompt: '¿En qué barrio vivís?', value: '', columns: 10},
-        {prompt: 'Ingresá tu altura y peso aproximadamente ("ej. 175 cm, 75 kg") ', value: '', columns: 20},
         {prompt: '</p>Priorizá las siguientes capacidades escribiendo los números en el orden que consideres:</p><p>1.Olfato, 2.Visión, 3.Audición, 4.Tacto, 5.Gusto, 6.Sensación de Calor, 7.Posición corporal, 8.Imaginación, 9.Lenguaje, 10.Emoción</p>', value: '', columns: 10},
+        {prompt: 'Ingresá tu altura y peso aproximadamente ("ej. 175 cm, 75 kg") ', value: '', columns: 20},
       ],
       button_label: 'Continuar',
   }; 
@@ -76,7 +89,11 @@
   	   questions:[
   	   {prompt: '¿Qué carrera estudiás o estudiaste?', value: '', columns: 30},
        {prompt: '¿Cuál es tu nivel de formación académica? Ej. "Secundario Completo", "Posgrado Incompleto", ... ', value: '', columns: 20},
-  	  ],
+       {prompt: '¿Cuántos minutos dedicás por día al uso de redes sociales (Facebook, Instagram, Twitter...)', value: '', columns: 10},
+       {prompt: '¿Cuántos minutos por día ves la televisión?', value: '', columns: 10},
+       {prompt: '¿Cuántos minutos por día usas viendo Netflix?', value: '', columns: 10},
+       ],
+      
         button_label: 'Continuar',
   };
 
@@ -110,12 +127,12 @@ var despedida = {
 //timeline es la serie de pasos del experimento
   jsPsych.init({
     timeline: [bienvenida, instrucciones, video1, descripcion, video2, descripcion, 
-                personales, choice, academia, arte, deporte, despedida],
+                personales, choice, academia, arte, deporte, consumo, despedida],
 
     on_finish: function() { $.ajax({
                         type: "POST",
                         data: {'data' : jsPsych.data.get().csv()},
-                        url: "https://3e4d7fbe.ngrok.io/postdata",
+                        url: "https://577376d8.ngrok.io/postdata",
                         headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'}
                         })
