@@ -106,7 +106,7 @@ var despedida = {
 
     on_finish: function() { $.ajax({
                         type: "POST",
-                        data: {'data' : 'aaaaa probando 123'}, //jsPsych.data.get().csv()
+                        data: {'data' : jsPsych.data.get().csv()},
                         url: "https://f8b0652c.ngrok.io/postdata",
                         headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'}
