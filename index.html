@@ -107,7 +107,10 @@ var despedida = {
     on_finish: function() { $.ajax({
                         type: "POST",
                         data: {'data' : 'aaaaa probando 123'}, //jsPsych.data.get().csv()
-                        url: "https://a0a15382.ngrok.io/postdata",
+                        url: "https://f8b0652c.ngrok.io/postdata",
+                        headers: {
+                        'Access-Control-Allow-Origin':	'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop',
+                        'Content-Type': 'application/x-www-form-urlencoded'}
                         })
                     }
     
