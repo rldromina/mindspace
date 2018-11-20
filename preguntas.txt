@@ -1,0 +1,29 @@
+La barrita va de 0 años a 10 años, por favor indique durante cuantos años sostuvo las siguientes actividades:
+Instrumento musical
+Actividad física individual
+Deportes
+Artes plásticas
+Artes escénicas
+Investigación científica
+Andar a caballo
+Práctica de tiro
+
+Ahora, las barritas indican cuánto aprecias / priorizas cada elemento, siendo 0 nada, o 10 lo más importante jamás:
+Oido
+Visión
+Audición
+Sabor
+...
+
+Esta vez, las barritas cantidad promedio por día. Es decir, si algo se hace día por medio, indicar aproximadamente 0.5. 
+Generalmente, por día consumís:
+Televisión (horas)
+Netflix (horas)
+Facebook (horas)
+Instagram (horas)
+Trabajo en la PC (horas)
+Actividad Física (horas)
+Bebida alcohólica (dosis)
+Cafe (dosis)
+Sustancias recreacionales (dosis)
+
