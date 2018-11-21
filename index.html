@@ -87,9 +87,10 @@ for (i = 1; i < n + 1; i++) {
 
 var mate = {
   type: 'survey-multi-choice',
-  questions: [{prompt: "Un palo de Hockey y una bocha vale $1,10, sabiendo que el palo vale $1,00 más que la bocha. ¿Cuánto vale la bocha?", options: [0,1] , horizontal:true,required:true} 
-        ],
+  questions: [{prompt: "Un palo de Hockey y una bocha vale $1,10, sabiendo que el palo vale $1,00 más que la bocha. ¿Cuánto vale la bocha?", 
+          options: ['1,05', '0,05', '0,95', '0,10'] , horizontal:true,required:true}],
 };
+
 options_ = ['0 años (nada)',1,2,3,4,5,6,7,8,9, '10 años']
 var años = {
     type: 'survey-multi-choice',
