@@ -56,9 +56,18 @@
     };
 
 var audios = [];
-var i = 0;
 var file = '';
 var n = 5;
+var audio = {
+      type: 'survey-text',
+        questions: [
+        {prompt: '<p>Describí el audio con el mayor detalle que puedas.</p><audio controls><source src='+file+' type="audio/ogg"></audio>', 
+        value:'', rows: 30, colums: 400}
+        ],
+      button_label: 'Enviar',
+      }
+audios.push(audio)
+
 for (i = 1; i < n + 1; i++) { 
     file = './static/media/audios/' + i.toString() + '.ogg'
     var audio = {
