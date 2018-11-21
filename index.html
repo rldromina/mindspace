@@ -84,6 +84,12 @@ for (i = 1; i < n + 1; i++) {
       audios.push(audio)
 };
 
+
+var mate = {
+  type: 'survey-multi-choice',
+  questions: [{prompt: "Un palo de Hockey y una bocha vale $1,10, sabiendo que el palo vale $1,00 más que la bocha. ¿Cuánto vale la bocha?", options: [0,1] , horizontal:true,required:true} 
+        ],
+};
 options_ = ['0 años (nada)',1,2,3,4,5,6,7,8,9, '10 años']
 var años = {
     type: 'survey-multi-choice',
@@ -123,7 +129,7 @@ var horas = {
 
 
 options_ = [1,2,3,4,5,6,7,8,9,10]  
-var gustos = {
+var subjetivo = {
     type: 'survey-multi-choice',
     preamble: 'Del 1 al 10, puntúe según la importancia subjetiva que tiene para vos:',
     questions: [{prompt: "Interpretación o composición musical", options: options_, horizontal:true,required:true},
@@ -153,7 +159,15 @@ var choice = {
     button_label: 'Continuar',
 };
 
-// lo mismo acá, cada dato son cientos!! pueden resultar valiosos
+var empatia = {type: 'survey-multi-choice',
+    preamble: 'Del 1 al 10, puntúe según la importancia subjetiva que tiene para vos:',
+    questions: [{prompt: "<img src='./static/media/empatia/1.png'>", options: ["Alegre", "Compasive", 'Irritade', 'Aburride'], required:true},
+    {prompt: "<img src='./static/media/empatia/1.png'>", options: ["Aterrorizade", "Preocupade", 'Arrogante', 'Moleste'], required:true},
+    {prompt: "<img src='./static/media/empatia/1.png'>", options: ["Chistose", "Conmocionade", 'Deseose', 'Convencide'], required:true},
+    {prompt: "<img src='./static/media/empatia/1.png'>", options: ["Chistose", "Insistente", 'Divertide', 'Relajade'], required:true},
+    ],
+    button_label: 'Continuar',
+}
 
 var personales = {
     type: 'survey-text',
@@ -181,7 +195,7 @@ var despedida = {
 
 //timeline es la serie de pasos del experimento
   jsPsych.init({
-    timeline: [bienvenida, instrucciones, video1, descripcion, video2, descripcion, audios, personales, años, horas, subjetivo, choice, academia, despedida].flat(),
+    timeline: [empatia, bienvenida, instrucciones, video1, descripcion, video2, descripcion, audios, mate, personales, años, horas, subjetivo, choice, academia, despedida].flat(),
 
     on_finish: function() { $.ajax({
                         type: "POST",
