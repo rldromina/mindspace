@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="static/jspsych/css/jspsych.css"></link>
     <script src="static/jspsych/jspsych.js"></script>
     <script src="static/jspsych/plugins/jspsych-html-slider-response.js"></script>
+    <script src="static/jspsych/plugins/jspsych-audio-keyboard-response.js"></script>
     <script src="static/jspsych/plugins/jspsych-video.js"></script>
     <script src="static/jspsych/plugins/jspsych-survey-text.js?v=6"></script>
     <script src="static/jspsych/plugins/jspsych-html-keyboard-response.js"></script>
@@ -54,6 +55,13 @@
         button_label: 'Enviar',
     };
 
+var audio1 = {
+      type: 'audio-keyboard-response',
+      choices: ['e', 'a'],
+      prompt: '<p>Qué tipo de acorde es? e para menor, a para mayor</p>',
+      stimulus : 'static/media/audios/1.mp3'
+      }
+
   var slider1 = {
     type: 'html-slider-response',
     stimulus: '<font size=5.5><p>La barrita va de 0 años a 10 años, por favor indique durante cuantos años sostuvo la siguiente actividad:</p></font>',
@@ -71,6 +79,7 @@
       button_label: 'Continuar',
   };
   
+  // eu dejen algunas de consumo, no hace falta tanto detalle
   var consumo = {
       type: 'survey-multi-choice',
       prompt: '¿Dirías que las siguientes afirmaciones generalmente se cumplen para vos? En el último mes, consumí en una misma ocasión:',
@@ -81,6 +90,7 @@
       button_label: 'Continuar',
   };
 
+  // lo mismo acá, cada dato son cientos!! pueden resultar valiosos
 
   var personales = {
       type: 'survey-text',
@@ -136,7 +146,7 @@ var despedida = {
 
 //timeline es la serie de pasos del experimento
   jsPsych.init({
-    timeline: [bienvenida, instrucciones, slider1, video1, descripcion, video2, descripcion, 
+    timeline: [bienvenida, instrucciones, audio1, slider1, video1, descripcion, video2, descripcion, 
                 personales, choice, academia, arte, deporte, consumo, despedida],
 
     on_finish: function() { $.ajax({

@@ -1,4 +1,4 @@
-(JSPSYCH HTML SLIDE RESPONSE)
+﻿(JSPSYCH HTML SLIDE RESPONSE)
 La barrita va de 0 años a 10 años, por favor indique durante cuantos años sostuvo las siguientes actividades: 
 Instrumento musical
 Actividad física individual
@@ -51,3 +51,20 @@ Prueba Empatía:
 Eyes in the mind, algunas imagenes
 
 (Prueba sonido, distinguir si son distintos, o intervalos?)
+
+
+
+var audios = []
+var i = 0
+var file = ''
+n = 5
+for (i = 0; i < 5; i++) { 
+    file = 'static/media/audios/' + i.toString() + '.ogg'
+    var audio = {
+      type: 'audio-keyboard-response',
+      choices: ['e', 'a'],
+      prompt: 'Qué tipo de acorde es? e para menor, a para mayor',
+      stimulus : file
+      } 
+  audios.push(audio)
+  }
