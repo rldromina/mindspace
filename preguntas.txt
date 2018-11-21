@@ -1,4 +1,5 @@
-La barrita va de 0 años a 10 años, por favor indique durante cuantos años sostuvo las siguientes actividades:
+(JSPSYCH HTML SLIDE RESPONSE)
+La barrita va de 0 años a 10 años, por favor indique durante cuantos años sostuvo las siguientes actividades: 
 Instrumento musical
 Actividad física individual
 Deportes
@@ -8,6 +9,7 @@ Investigación científica
 Andar a caballo (?
 Práctica de tiro (?
 
+(IDEM)
 Ahora, las barritas indican cuánto aprecias / priorizas cada elemento, siendo 0 nada, o 10 lo más importante jamás:
 Oido
 Visión
@@ -23,7 +25,7 @@ Imaginación
 Orientación en el tiempo (fecha)
 Orientación en el espacio (conciencia geográfica)
 
-
+(IDEM)
 Esta vez, las barritas cantidad promedio por día. Es decir, si algo se hace día por medio, indicar aproximadamente 0.5. 
 Generalmente, por día consumís:
 Televisión (horas)
@@ -35,6 +37,9 @@ Actividad Física (horas)
 Bebida alcohólica (dosis)
 Cafe (dosis)
 Sustancias recreacionales (dosis)
+
+(JSPSYCH CHOICE SIMPLE, se pone en stimulus o en prompt el html: <img src=PATH_AL_ARCHIVO>,
+en nuestro caso es static/media/imagen.jpg)
 
 Prueba música:
 Partitura simple, solo clave de Sol, choice: Feliz cumpleaños, otras 3
