@@ -1,29 +1,48 @@
-La barrita va de 0 a�os a 10 a�os, por favor indique durante cuantos a�os sostuvo las siguientes actividades:
+La barrita va de 0 años a 10 años, por favor indique durante cuantos años sostuvo las siguientes actividades:
 Instrumento musical
-Actividad f�sica individual
+Actividad física individual
 Deportes
-Artes pl�sticas
-Artes esc�nicas
-Investigaci�n cient�fica
-Andar a caballo
-Pr�ctica de tiro
+Artes plásticas
+Artes escénicas
+Investigación científica
+Andar a caballo (?
+Práctica de tiro (?
 
-Ahora, las barritas indican cu�nto aprecias / priorizas cada elemento, siendo 0 nada, o 10 lo m�s importante jam�s:
+Ahora, las barritas indican cuánto aprecias / priorizas cada elemento, siendo 0 nada, o 10 lo más importante jamás:
 Oido
-Visi�n
-Audici�n
+Visión
+Audición
 Sabor
-...
+Lenguaje
+Emoción
+Olfato 
+Tacto, texturas
+Tacto, calor
+Posición del cuerpo
+Imaginación
+Orientación en el tiempo (fecha)
+Orientación en el espacio (conciencia geográfica)
 
-Esta vez, las barritas cantidad promedio por d�a. Es decir, si algo se hace d�a por medio, indicar aproximadamente 0.5. 
-Generalmente, por d�a consum�s:
-Televisi�n (horas)
+
+Esta vez, las barritas cantidad promedio por día. Es decir, si algo se hace día por medio, indicar aproximadamente 0.5. 
+Generalmente, por día consumís:
+Televisión (horas)
 Netflix (horas)
 Facebook (horas)
 Instagram (horas)
 Trabajo en la PC (horas)
-Actividad F�sica (horas)
-Bebida alcoh�lica (dosis)
+Actividad Física (horas)
+Bebida alcohólica (dosis)
 Cafe (dosis)
 Sustancias recreacionales (dosis)
 
+Prueba música:
+Partitura simple, solo clave de Sol, choice: Feliz cumpleaños, otras 3
+
+Prueba matemática:
+Algo de álgebra abstracto complejo pero intuitivo
+
+Prueba Empatía:
+Eyes in the mind, algunas imagenes
+
+(Prueba sonido, distinguir si son distintos, o intervalos?)
