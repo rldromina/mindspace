@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" href="static/media/favicon.ico">
     <link rel="stylesheet" href="static/jspsych/css/jspsych.css"></link>
     <script src="static/jspsych/jspsych.js"></script>
+    <script src="static/jspsych/plugins/jspsych-html-slider-response.js"></script>
     <script src="static/jspsych/plugins/jspsych-video.js"></script>
     <script src="static/jspsych/plugins/jspsych-survey-text.js?v=6"></script>
     <script src="static/jspsych/plugins/jspsych-html-keyboard-response.js"></script>
@@ -53,7 +54,16 @@
         button_label: 'Enviar',
     };
 
-
+  var slider1 = {
+    type: 'html-slider-response',
+    stimulus: '<font size=5.5><p>La barrita va de 0 años a 10 años, por favor indique durante cuantos años sostuvo la siguiente actividad:</p></font>',
+    labels: [0,1,2,3,4,5,6,7,8,9, '10 años'],
+    min: 0,
+    max: 10,
+    start: 0,
+    step: 0.5,
+    prompt: "<p>Instrumento musical</p>",
+  };
   var choice = {
       type: 'survey-multi-choice',
       questions: [{prompt: "¿Estudiás o estudiaste alguna ciencias exacta?", options: ["Sí", "No"], required:true}],
@@ -126,7 +136,7 @@ var despedida = {
 
 //timeline es la serie de pasos del experimento
   jsPsych.init({
-    timeline: [bienvenida, instrucciones, video1, descripcion, video2, descripcion, 
+    timeline: [bienvenida, instrucciones, slider1, video1, descripcion, video2, descripcion, 
                 personales, choice, academia, arte, deporte, consumo, despedida],
 
     on_finish: function() { $.ajax({
