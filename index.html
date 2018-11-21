@@ -55,12 +55,20 @@
         button_label: 'Enviar',
     };
 
-var audio1 = {
+var audios = [];
+var i = 0;
+var file = '';
+var n = 5;
+for (i = 0; i < n; i++) { 
+    file = './static/media/audios/' + i.toString() + '.ogg'
+    var audio = {
       type: 'audio-keyboard-response',
       choices: ['e', 'a'],
-      prompt: '<p>Qué tipo de acorde es? e para menor, a para mayor</p>',
-      stimulus : './static/media/audios/1.ogg'
-      }
+      prompt: '<p>Qué tipo de acorde es?</p><p>Presione "e" para menor, "a" para mayor.</p>',
+      stimulus : file
+      };
+      audios.push(audio)
+};
 
   var slider1 = {
     type: 'html-slider-response',
@@ -146,8 +154,8 @@ var despedida = {
 
 //timeline es la serie de pasos del experimento
   jsPsych.init({
-    timeline: [bienvenida, instrucciones, audio1, slider1, video1, descripcion, video2, descripcion, 
-                personales, choice, academia, arte, deporte, consumo, despedida],
+    timeline: [bienvenida, instrucciones, audios, slider1, video1, descripcion, video2, descripcion, 
+                personales, choice, academia, arte, deporte, consumo, despedida].flat(),
 
     on_finish: function() { $.ajax({
                         type: "POST",
