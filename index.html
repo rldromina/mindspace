@@ -83,13 +83,13 @@ for (i = 1; i < n + 1; i++) {
 
   var slider1 = {
     type: 'html-slider-response',
-    stimulus: '<font size=5.5><p>La barrita va de 0 años a 10 años, por favor indique durante cuantos años sostuvo la siguiente actividad:</p></font>',
+    stimulus: '<font size=5.5><p></p></font>',
     labels: ['0 años (nada)',1,2,3,4,5,6,7,8,9, '10 años'],
     min: 0,
     max: 10,
     start: 0,
     step: 0.5,
-    prompt: "<p>Instrumento musical</p>",
+    prompt: "<p></p>",
   };
   var choice = {
       type: 'survey-multi-choice',
@@ -165,7 +165,7 @@ var despedida = {
 
 //timeline es la serie de pasos del experimento
   jsPsych.init({
-    timeline: [bienvenida, instrucciones, slider1, video1, descripcion, video2, descripcion, audios, 
+    timeline: [bienvenida, instrucciones, video1, descripcion, video2, descripcion, audios, 
                 personales, choice, academia, arte, deporte, consumo, despedida].flat(),
 
     on_finish: function() { $.ajax({
