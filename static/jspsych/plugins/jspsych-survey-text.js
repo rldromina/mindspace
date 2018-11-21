@@ -123,6 +123,7 @@ jsPsych.plugins['survey-text'] = (function() {
 
       // Super agregado, Salve Dr. Ariztizbal! 
       var min = 150;
+
       var largo = val.split(" ").length;
       if ((trial.button_label == 'Enviar') & (largo < min)) {
         alert('Ha ingresado '+ largo.toString() +' palabras. Por favor ingrese más de '+min)
