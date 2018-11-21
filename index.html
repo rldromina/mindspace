@@ -36,7 +36,7 @@
       sources: ['./static/media/chinitos.mp4'],
       stop:15,
       autoplay: true, 
-      controls: true,
+      controls: false,
     };
   var video2 = {
       type: 'video',
@@ -44,7 +44,7 @@
       sources: ['./static/media/Londres.mp4'],
       stop:15,
       autoplay: true, 
-      controls: true,
+      controls: false,
     };
   
   var descripcion = {
@@ -84,7 +84,7 @@ for (i = 1; i < n + 1; i++) {
   var slider1 = {
     type: 'html-slider-response',
     stimulus: '<font size=5.5><p>La barrita va de 0 años a 10 años, por favor indique durante cuantos años sostuvo la siguiente actividad:</p></font>',
-    labels: [0,1,2,3,4,5,6,7,8,9, '10 años'],
+    labels: ['0 años (nada)',1,2,3,4,5,6,7,8,9, '10 años'],
     min: 0,
     max: 10,
     start: 0,
