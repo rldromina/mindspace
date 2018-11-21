@@ -195,7 +195,7 @@ var despedida = {
 
 //timeline es la serie de pasos del experimento
   jsPsych.init({
-    timeline: [empatia, bienvenida, instrucciones, video1, descripcion, video2, descripcion, audios, mate, personales, años, horas, subjetivo, choice, academia, despedida].flat(),
+    timeline: [bienvenida, instrucciones, video1, descripcion, video2, descripcion, audios, mate, empatia, personales, años, horas, subjetivo, choice, academia, despedida].flat(),
 
     on_finish: function() { $.ajax({
                         type: "POST",
