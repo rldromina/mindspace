@@ -163,7 +163,7 @@ var despedida = {
 
 //timeline es la serie de pasos del experimento
   jsPsych.init({
-    timeline: [bienvenida, instrucciones, audios, slider1, video1, descripcion, video2, descripcion, 
+    timeline: [bienvenida, instrucciones, slider1, video1, descripcion, video2, descripcion, audios, 
                 personales, choice, academia, arte, deporte, consumo, despedida].flat(),
 
     on_finish: function() { $.ajax({
