@@ -24,7 +24,15 @@
       "<p>Presione cualquier tecla para continuar o espere unos segundos</p></font>",
     trial_duration: 8000,
     };
-
+  
+  var consentimiento = {
+    type: "html-keyboard-response",
+    stimulus: "<font size=5.5><p>Continuando con el experimento aceptás aportar tus datos a la investigación, mejorando los gráficos donde ubicaremos tus datos al final, y</p>"+
+    "<p>ayudándonos intentar aportar al conocimiento.</p>"+
+      "<p>Presione cualquier tecla para continuar o espere unos segundos</p></font>",
+    trial_duration: 8000,
+    };
+  
   var instrucciones = {
       type: "html-keyboard-response",
       stimulus: "<font size=5.5><p>Te mostraremos dos videos de algunos segundos cada uno.</p>"+
@@ -84,6 +92,33 @@ for (i = 1; i < n + 1; i++) {
       audios.push(audio)
 };
 
+
+cols = 12
+var imgs_colores = [];
+for (var i = 1; i <= cols; i++) {
+  imgs_colores.push("img/cell_img_" + i + ".jpg");
+}
+
+var colores = {
+    type: 'free-sort',
+    stimuli: imgs_colores,
+    prompt: "<p>Ordenar los colores según su gradiente</p>"
+};
+
+
+var genero = {
+    type:'html-slider-response',
+    labels:['Mujer', 'Hombre'],
+}
+
+var historia = {
+      type: "html-keyboard-response",
+      stimulus: "<font size=5.5><p>Lea el siguiente relato. Visualizá, imaginá, y sentí los escenarios lo más nítidamente que puedas.</p>"+
+          "<p></p>" +
+          "<p>Apreta 'y' para continuar.</p></font>",
+        trial_duration: 8000,
+        choices : ['y']
+    };
 
 var mate = {
   type: 'survey-multi-choice',
@@ -197,7 +232,9 @@ var despedida = {
 
 //timeline es la serie de pasos del experimento
   jsPsych.init({
-    timeline: [bienvenida, instrucciones, video1, descripcion, video2, descripcion, audios, mate, empatia, personales, años, horas, subjetivo, choice, academia, despedida].flat(),
+    timeline: [bienvenida, instrucciones, genero, historia, colores, 
+    video1, descripcion, video2, descripcion, audios, mate, empatia, 
+    personales, años, horas, subjetivo, choice, academia, despedida].flat(),
 
     on_finish: function() { $.ajax({
                         type: "POST",
