@@ -39,13 +39,13 @@ jsPsych.plugins['free-sort'] = (function() {
       sort_area_height: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Sort area height',
-        default: 125,
+        default: 130,
         description: 'The height of the container that subjects can move the stimuli in.'
       },
       sort_area_width: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Sort area width',
-        default: 1450,
+        default: 880,
         description: 'The width of the container that subjects can move the stimuli in.'
       },
       prompt: {
