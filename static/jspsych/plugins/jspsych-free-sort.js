@@ -39,13 +39,13 @@ jsPsych.plugins['free-sort'] = (function() {
       sort_area_height: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Sort area height',
-        default: 130,
+        default: 125,
         description: 'The height of the container that subjects can move the stimuli in.'
       },
       sort_area_width: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Sort area width',
-        default: 1310,
+        default: 1450,
         description: 'The width of the container that subjects can move the stimuli in.'
       },
       prompt: {
@@ -64,7 +64,7 @@ jsPsych.plugins['free-sort'] = (function() {
       button_label: {
         type: jsPsych.plugins.parameterType.STRING,
         pretty_name: 'Button label',
-        default:  'Continue',
+        default:  'Continuar',
         description: 'The text that appears on the button to continue to the next trial.'
       }
     }
