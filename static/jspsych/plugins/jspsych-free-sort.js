@@ -27,25 +27,25 @@ jsPsych.plugins['free-sort'] = (function() {
       stim_height: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Stimulus height',
-        default: 100,
+        default: 120,
         description: 'Height of images in pixels.'
       },
       stim_width: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Stimulus width',
-        default: 100,
+        default: 120,
         description: 'Width of images in pixels'
       },
       sort_area_height: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Sort area height',
-        default: 800,
+        default: 130,
         description: 'The height of the container that subjects can move the stimuli in.'
       },
       sort_area_width: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Sort area width',
-        default: 800,
+        default: 1310,
         description: 'The width of the container that subjects can move the stimuli in.'
       },
       prompt: {
