@@ -45,7 +45,7 @@
   var video1 = {
       type: 'video',
       width: 910,
-      sources: ['./static/media/chinitos.mp4'],
+      sources: ['./static/media/stimuli/chinitos.mp4'],
       stop:15,
       autoplay: true, 
       controls: false,
@@ -53,7 +53,7 @@
   var video2 = {
       type: 'video',
       width: 950,
-      sources: ['./static/media/Londres.mp4'],
+      sources: ['./static/media/stimuli/Londres.mp4'],
       stop:15,
       autoplay: true, 
       controls: false,
@@ -97,7 +97,7 @@ for (i = 1; i < n + 1; i++) {
 cols = 12
 var imgs_colores = [];
 for (var i = 1; i <= cols; i++) {
-  imgs_colores.push("img/cell_img_" + i + ".jpg");
+  imgs_colores.push("static/media/colores/" + i + ".png");
 }
 
 var colores = {
@@ -230,7 +230,7 @@ var academia = {
 
 var despedida = {
   type: "html-keyboard-response",
-  stimulus: "<p>Muchas gracias!</p><img src='static/media/thanks.jpg'</img><p>De parte de Romi, Liber y Mati.",
+  stimulus: "<p>Muchas gracias!</p><img src='static/media/misc/thanks.jpg'</img><p>De parte de Romi, Liber y Mati.",
 } 
 
 //timeline es la serie de pasos del experimento
