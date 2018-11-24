@@ -71,17 +71,6 @@ var audios = [];
 var file = '';
 var n = 3;
 var i = 0;
-file = './static/media/audios/' + i.toString() + '.mp3'
-var audio = {
-      type: 'survey-text',
-        questions: [
-        {prompt: '<p>Describí el audio con el mayor detalle que puedas.</p><audio controls><source src='+file+' type="audio/mp3"></audio>', 
-        value:'', rows: 30, colums: 400}
-        ],
-      button_label: 'Enviar',
-      }
-audios.push(audio)
-
 for (i = 1; i < n + 1; i++) { 
     file = './static/media/audios/' + i.toString() + '.ogg'
     var audio = {
